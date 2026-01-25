@@ -100,12 +100,12 @@ st.write("Upload test dataset, select a model, and view evaluation metrics.")
 @st.cache_resource
 def load_models():
     models = {
-        "Logistic Regression": joblib.load("model/logistic_regression.pkl"),
-        "Decision Tree Classifier": joblib.load("model/decision_tree.pkl"),
-        "K-Nearest Neighbor Classifier": joblib.load("model/knn.pkl"),
+        "Logistic Regression": joblib.load("model/Logistic_Regression.pkl"),
+        "Decision Tree Classifier": joblib.load("model/Decision_Tree.pkl"),
+        "K-Nearest Neighbor Classifier": joblib.load("model/kNN.pkl"),
         "Naive Bayes Classifier": joblib.load("model/Naive_Bayes_Gaussian.pkl"),
-        "Ensemble Model - Random Forest": joblib.load("model/random_forest.pkl"),
-        "Ensemble Model - XGBoost": joblib.load("model/xgboost.pkl")
+        "Ensemble Model - Random Forest": joblib.load("model/Random_Forest.pkl"),
+        "Ensemble Model - XGBoost": joblib.load("model/XGBoost.pkl")
     }
 
     scaler = joblib.load("model/scaler.pkl")
