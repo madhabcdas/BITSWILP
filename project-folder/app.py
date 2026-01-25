@@ -8,6 +8,7 @@ from sklearn.metrics import (
     accuracy_score, precision_score, recall_score, f1_score,
     roc_auc_score, matthews_corrcoef, confusion_matrix, classification_report
 )
+from pathlib import Path
 
 st.set_page_config(page_title="Breast Cancer Classification", layout="wide")
 
@@ -98,14 +99,24 @@ st.title("🔬 Breast Cancer Classification - ML Model Evaluation App")
 st.write("Upload test dataset, select a model, and view evaluation metrics.")
 
 @st.cache_resource
+# Get the directory where app.py is located
+BASE_DIR = Path(__file__).resolve().parent
 def load_models():
+    # Construct absolute path: /mount/src/bitswilp/project-folder/model/Logistic_Regression.pkl
+    model_path1 = BASE_DIR / "model" / "Logistic_Regression.pkl"
+    model_path2 = BASE_DIR / "model" / "Decision_Tree.pkl"
+    model_path3 = BASE_DIR / "model" / "kNN.pkl"
+    model_path4 = BASE_DIR / "model" / "Naive_Bayes_Gaussian.pkl"
+    model_path5 = BASE_DIR / "model" / "Random_Forest.pkl"
+    model_path6 = BASE_DIR / "model" / "Random_Forest.pkl"
+
     models = {
-        "Logistic Regression": joblib.load("model/Logistic_Regression.pkl"),
-        "Decision Tree Classifier": joblib.load("model/Decision_Tree.pkl"),
-        "K-Nearest Neighbor Classifier": joblib.load("model/kNN.pkl"),
-        "Naive Bayes Classifier": joblib.load("model/Naive_Bayes_Gaussian.pkl"),
-        "Ensemble Model - Random Forest": joblib.load("model/Random_Forest.pkl"),
-        "Ensemble Model - XGBoost": joblib.load("model/XGBoost.pkl")
+        "Logistic Regression": model_path1,
+        "Decision Tree Classifier": model_path2,
+        "K-Nearest Neighbor Classifier": model_path3,
+        "Naive Bayes Classifier": model_path4,
+        "Ensemble Model - Random Forest": model_path5,
+        "Ensemble Model - XGBoost": model_path6
     }
 
     scaler = joblib.load("model/scaler.pkl")
