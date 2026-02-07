@@ -89,7 +89,7 @@ f. **Technologies Used**
 - Seaborn & Matplotlib
 - Pandas & NumPy
 
-g. Author
-Madhab Chandra Das
+g. **Author**
+_Madhab Chandra Das_
 BITS Pilani WILP – Machine Learning Lab Assignment
 2025ab05151@wilp.bits-pilani.ac.in
